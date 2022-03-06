@@ -3,11 +3,9 @@ services:
   sfserver:
     image: akaronte/sfserver:latest
     container_name: sfserver
-    #mem_limit: 5120m
-    mem_limit: 7168m
+    user: "sfserver:sfserver"
     volumes:
-      - ./log:/home/sfserver/Satisfactory/FactoryGame/Saved/Logs
-      - ./SavesGames:/home/sfserver/.config/Epic/FactoryGame/Saved/SaveGames
+      - ./HOME_SATISFACTORY:/home/sfserver
     ports:
       - 15777:15777/udp
       - 15000:15000/udp
