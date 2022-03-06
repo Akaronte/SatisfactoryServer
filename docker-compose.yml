@@ -5,7 +5,7 @@ services:
     container_name: sfserver
     user: "sfserver:sfserver"
     volumes:
-      - ./HOME_SATISFACTORY:/home/sfserver
+      - ./SATISFACTORY:/home/sfserver
     ports:
       - 15777:15777/udp
       - 15000:15000/udp
