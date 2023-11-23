@@ -14,6 +14,8 @@ RUN yum install -y nano wget screen glibc.i686 libstdc++.i686 ncurses-libs.i686
 
 RUN yum install -y bzip2 curl lsof libstdc++.i686 glibc.i686 libstdc++.i686 perl-Compress-Zlib -y
 
+RUN  yum provides ld-linux.so.2
+
 RUN yum install -y curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux glibc.i686 libstdc++ libstdc++.i686 zlib-devel nmap-ncat file
 
 RUN adduser -m sfserver -u 1000
