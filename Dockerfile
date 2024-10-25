@@ -1,4 +1,4 @@
-FROM centos:centos7.5.1804
+FROM ubuntu:20.04
 
 STOPSIGNAL SIGTERM
 
@@ -6,19 +6,17 @@ ENV PUID=1000 PGID=1000 LANG=en_US.utf8 TERM=xterm VERSION=public
 
 USER root
 
-RUN yum install -y epel-release sudo
+RUN apt-get update && apt-get install -y sudo
 
-RUN yum update -y
+RUN apt-get update && apt-get upgrade -y
 
-RUN yum install -y nano wget screen glibc.i686 libstdc++.i686 ncurses-libs.i686
+# RUN apt-get install -y nano wget screen libc6:i386 libstdc++6:i386 libncurses5:i386
 
-RUN yum install -y bzip2 curl lsof libstdc++.i686 glibc.i686 libstdc++.i686 perl-Compress-Zlib -y
+# RUN apt-get install -y bzip2 curl lsof libstdc++6:i386 libc6:i386 perl
 
-RUN  yum provides ld-linux.so.2
+RUN apt-get install -y curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux nmap file
 
-RUN yum install -y curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux glibc.i686 libstdc++ libstdc++.i686 zlib-devel nmap-ncat file
-
-RUN adduser -m sfserver -u 1000
+RUN adduser --disabled-password --gecos "" sfserver --uid 1000
 
 WORKDIR /home/sfserver
 
