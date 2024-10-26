@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if test -f "/home/sfserver/Satisfactory/FactoryServer.sh"; then
 sh /home/sfserver/Satisfactory/FactoryServer.sh
 else
