@@ -1,8 +1,7 @@
 version: '2'
 services:
   sfserver:
-    # image: akaronte/sfserver:latest
-    image: sfserver
+    image: akaronte/sfserver:latest
     container_name: sfserver
     user: "sfserver:sfserver"
     volumes:
