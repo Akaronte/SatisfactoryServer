@@ -32,3 +32,14 @@ docker-compose up -d
 ```
 
 Enjoy
+
+docker run --rm --name sfserver -ti -u root sfserver bash
+
+apt install steamcmd -y
+
+
+sudo apt-get install lib32gcc-s1 -y
+
+curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+
+./steamcmd.sh +force_install_dir /home/steam/squad-dedicated +login anonymous +app_update 403240 +quit

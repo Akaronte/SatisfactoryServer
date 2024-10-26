@@ -1,22 +1,10 @@
-FROM ubuntu:20.04
+FROM akaronte/steamcmd:latest
 
 STOPSIGNAL SIGTERM
 
 ENV PUID=1000 PGID=1000 LANG=en_US.utf8 TERM=xterm VERSION=public
 
 USER root
-
-RUN apt-get update && apt-get install -y sudo
-
-RUN apt-get update && apt-get upgrade -y
-
-# RUN apt-get install -y nano wget screen libc6:i386 libstdc++6:i386 libncurses5:i386
-
-# RUN apt-get install -y bzip2 curl lsof libstdc++6:i386 libc6:i386 perl
-
-RUN apt-get install -y curl wget tar bzip2 gzip unzip python3 binutils bc jq tmux nmap file
-
-RUN adduser --disabled-password --gecos "" sfserver --uid 1000
 
 WORKDIR /home/sfserver
 
