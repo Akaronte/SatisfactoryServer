@@ -37,6 +37,7 @@ docker run --rm --name sfserver -ti -u root sfserver bash
 
 apt install steamcmd -y
 
+docker commit mi-contenedor mi-imagen
 
 sudo apt-get install lib32gcc-s1 -y
 
